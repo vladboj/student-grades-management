@@ -1,0 +1,2 @@
+Number of students -> 4
+Average age -> 17,5

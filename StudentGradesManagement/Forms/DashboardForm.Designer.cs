@@ -52,6 +52,7 @@
             this.labelTitleSubjects = new System.Windows.Forms.Label();
             this.saveToFileToolStripMenuSave = new System.Windows.Forms.ToolStripMenuItem();
             this.loadFromFileToolStripMenuLoad = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateReportToolStripMenuReport = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripStudents.SuspendLayout();
             this.contextMenuStripSubjects.SuspendLayout();
             this.SuspendLayout();
@@ -137,9 +138,10 @@
             this.editToolStripMenuStudent,
             this.deleteToolStripMenuStudent,
             this.saveToFileToolStripMenuSave,
-            this.loadFromFileToolStripMenuLoad});
+            this.loadFromFileToolStripMenuLoad,
+            this.generateReportToolStripMenuReport});
             this.contextMenuStripStudents.Name = "contextMenuStripStudents";
-            this.contextMenuStripStudents.Size = new System.Drawing.Size(301, 200);
+            this.contextMenuStripStudents.Size = new System.Drawing.Size(301, 238);
             // 
             // editToolStripMenuStudent
             // 
@@ -253,6 +255,13 @@
             this.loadFromFileToolStripMenuLoad.Text = "Load from file";
             this.loadFromFileToolStripMenuLoad.Click += new System.EventHandler(this.loadFromFileToolStripMenuLoad_Click);
             // 
+            // generateReportToolStripMenuReport
+            // 
+            this.generateReportToolStripMenuReport.Name = "generateReportToolStripMenuReport";
+            this.generateReportToolStripMenuReport.Size = new System.Drawing.Size(300, 38);
+            this.generateReportToolStripMenuReport.Text = "Generate report";
+            this.generateReportToolStripMenuReport.Click += new System.EventHandler(this.generateReportToolStripMenuReport_Click);
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -301,5 +310,6 @@
         private System.Windows.Forms.Label labelTitleSubjects;
         private System.Windows.Forms.ToolStripMenuItem saveToFileToolStripMenuSave;
         private System.Windows.Forms.ToolStripMenuItem loadFromFileToolStripMenuLoad;
+        private System.Windows.Forms.ToolStripMenuItem generateReportToolStripMenuReport;
     }
 }

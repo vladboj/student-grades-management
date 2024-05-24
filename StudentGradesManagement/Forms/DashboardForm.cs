@@ -182,5 +182,24 @@ namespace StudentGradesManagement.Forms
                 }
             }
         }
+
+        private void generateReportToolStripMenuReport_Click(object sender, EventArgs e)
+        {
+            int numberOfStudents = Dashboard.Students.Count;
+            float averageAge = 0;
+            foreach (Student student in Dashboard.Students)
+            {
+                averageAge += student.getAge();
+            }
+            averageAge /= numberOfStudents;
+
+            string reportFilePath = "C:\\Users\\vladb\\mine\\Repositories\\StudentGradesManagement\\StudentGradesManagement\\report.txt";
+            using (StreamWriter writer = new StreamWriter(reportFilePath))
+            {
+                Console.SetOut(writer);
+                Console.WriteLine($"Number of students -> {numberOfStudents}");
+                Console.WriteLine($"Average age -> {averageAge}");
+            }
+        }
     }
 }

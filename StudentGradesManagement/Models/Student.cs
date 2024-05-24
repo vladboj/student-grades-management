@@ -19,5 +19,11 @@ namespace StudentGradesManagement.Models
         {
             Subjects = new List<Subject>();
         }
+
+        public float getAge()
+        {
+            TimeSpan difference = System.DateTime.Now - DateOfBirth;
+            return difference.Days / 365;
+        }
     }
 }
