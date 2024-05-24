@@ -47,7 +47,7 @@
             // 
             this.buttonAddStudent.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonAddStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddStudent.Location = new System.Drawing.Point(413, 717);
+            this.buttonAddStudent.Location = new System.Drawing.Point(367, 699);
             this.buttonAddStudent.Name = "buttonAddStudent";
             this.buttonAddStudent.Size = new System.Drawing.Size(281, 114);
             this.buttonAddStudent.TabIndex = 0;
@@ -59,7 +59,7 @@
             // 
             this.buttonAddSubject.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonAddSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddSubject.Location = new System.Drawing.Point(1187, 717);
+            this.buttonAddSubject.Location = new System.Drawing.Point(1141, 699);
             this.buttonAddSubject.Name = "buttonAddSubject";
             this.buttonAddSubject.Size = new System.Drawing.Size(270, 114);
             this.buttonAddSubject.TabIndex = 1;
@@ -78,7 +78,7 @@
             this.columnSubjects});
             this.listViewStudents.GridLines = true;
             this.listViewStudents.HideSelection = false;
-            this.listViewStudents.Location = new System.Drawing.Point(68, 47);
+            this.listViewStudents.Location = new System.Drawing.Point(22, 29);
             this.listViewStudents.Name = "listViewStudents";
             this.listViewStudents.Size = new System.Drawing.Size(958, 562);
             this.listViewStudents.TabIndex = 2;
@@ -88,31 +88,31 @@
             // columnStudentId
             // 
             this.columnStudentId.Text = "ID";
-            this.columnStudentId.Width = -2;
+            this.columnStudentId.Width = 50;
             // 
             // columnFirstName
             // 
             this.columnFirstName.Text = "First Name";
             this.columnFirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnFirstName.Width = -2;
+            this.columnFirstName.Width = 116;
             // 
             // columnLastName
             // 
             this.columnLastName.Text = "Last Name";
             this.columnLastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnLastName.Width = -2;
+            this.columnLastName.Width = 115;
             // 
             // columnDateOfBirth
             // 
             this.columnDateOfBirth.Text = "Date of Birth";
             this.columnDateOfBirth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnDateOfBirth.Width = -2;
+            this.columnDateOfBirth.Width = 131;
             // 
             // columnSubjects
             // 
             this.columnSubjects.Text = "Subjects";
             this.columnSubjects.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnSubjects.Width = -2;
+            this.columnSubjects.Width = 542;
             // 
             // listViewSubjects
             // 
@@ -124,7 +124,7 @@
             this.columnCredits});
             this.listViewSubjects.GridLines = true;
             this.listViewSubjects.HideSelection = false;
-            this.listViewSubjects.Location = new System.Drawing.Point(1083, 47);
+            this.listViewSubjects.Location = new System.Drawing.Point(1037, 29);
             this.listViewSubjects.Name = "listViewSubjects";
             this.listViewSubjects.Size = new System.Drawing.Size(527, 562);
             this.listViewSubjects.TabIndex = 3;

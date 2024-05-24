@@ -13,5 +13,10 @@ namespace StudentGradesManagement.Models
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public List<Subject> Subjects { get; set; }
+
+        public Student()
+        {
+            Subjects = new List<Subject>();
+        }
     }
 }

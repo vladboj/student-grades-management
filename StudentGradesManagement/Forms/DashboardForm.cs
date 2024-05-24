@@ -14,7 +14,7 @@ namespace StudentGradesManagement.Forms
 {
     public partial class DashboardForm : Form
     {
-        Dashboard Dashboard { get; set; }
+        public Dashboard Dashboard { get; set; }
 
         public DashboardForm()
         {
@@ -27,7 +27,22 @@ namespace StudentGradesManagement.Forms
             listViewStudents.Items.Clear();
             for(int i = 0; i < Dashboard.Students.Count; i++)
             {
-                string[] row = new string[] { Dashboard.Students[i].Id.ToString(), Dashboard.Students[i].FirstName, Dashboard.Students[i].LastName, Dashboard.Students[i].DateOfBirth.ToString() };
+                string subjectsNames = "";
+                foreach (Subject subject in Dashboard.Students[i].Subjects)
+                {
+                    subjectsNames += subject.Name + ", ";
+                }
+                if(subjectsNames.Length > 0)
+                {
+                    subjectsNames = subjectsNames.Substring(0, subjectsNames.Length - 2);
+                }
+                string[] row = new string[] { 
+                    Dashboard.Students[i].Id.ToString(), 
+                    Dashboard.Students[i].FirstName, 
+                    Dashboard.Students[i].LastName, 
+                    Dashboard.Students[i].DateOfBirth.Date.ToShortDateString(),
+                    subjectsNames
+                };
                 ListViewItem item = new ListViewItem(row);
                 item.Tag = Dashboard.Students[i];
                 listViewStudents.Items.Add(item);
@@ -38,9 +53,30 @@ namespace StudentGradesManagement.Forms
             }
         }
 
+        private void displaySubjects()
+        {
+            listViewSubjects.Items.Clear();
+            for (int i = 0; i < Dashboard.Subjects.Count; i++)
+            {
+                string[] row = new string[] { 
+                    Dashboard.Subjects[i].Id.ToString(), 
+                    Dashboard.Subjects[i].Name, 
+                    Dashboard.Subjects[i].Teacher, 
+                    Dashboard.Subjects[i].Credits.ToString() 
+                };
+                ListViewItem item = new ListViewItem(row);
+                item.Tag = Dashboard.Subjects[i];
+                listViewSubjects.Items.Add(item);
+            }
+            foreach (ColumnHeader column in listViewSubjects.Columns)
+            {
+                column.Width = -2; // -2 resizes to fit the column header and the items
+            }
+        }
+
         private void buttonAddStudent_Click(object sender, EventArgs e)
         {
-            StudentsForm studentsForm = new StudentsForm();
+            StudentsForm studentsForm = new StudentsForm(Dashboard);
             if(studentsForm.ShowDialog() == DialogResult.OK)
             {
                 Dashboard.Students.Add(studentsForm.Student);
@@ -50,7 +86,12 @@ namespace StudentGradesManagement.Forms
 
         private void buttonAddSubject_Click(object sender, EventArgs e)
         {
-
+            SubjectsForm subjectsForm = new SubjectsForm();
+            if(subjectsForm.ShowDialog() == DialogResult.OK)
+            {
+                Dashboard.Subjects.Add(subjectsForm.Subject);
+                displaySubjects();
+            }
         }
     }
 }
