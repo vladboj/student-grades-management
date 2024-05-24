@@ -119,5 +119,39 @@ namespace StudentGradesManagement.Forms
                 }
             }
         }
+
+        private void deleteToolStripMenuStudent_Click(object sender, EventArgs e)
+        {
+            if (listViewStudents.SelectedItems.Count == 1)
+            {
+                Student toBeDeleted = listViewStudents.SelectedItems[0].Tag as Student;
+                for (int i = 0; i < Dashboard.Students.Count; i++)
+                {
+                    if (Dashboard.Students[i] == toBeDeleted)
+                    {
+                        Dashboard.Students.RemoveAt(i);
+                        break;
+                    }
+                }
+                displayStudents();
+            }
+        }
+
+        private void deleteToolStripMenuSubject_Click(object sender, EventArgs e)
+        {
+            if (listViewSubjects.SelectedItems.Count == 1)
+            {
+                Subject toBeDeleted = listViewSubjects.SelectedItems[0].Tag as Subject;
+                for (int i = 0; i < Dashboard.Subjects.Count; i++)
+                {
+                    if (Dashboard.Subjects[i] == toBeDeleted)
+                    {
+                        Dashboard.Subjects.RemoveAt(i);
+                        break;
+                    }
+                }
+                displaySubjects();
+            }
+        }
     }
 }

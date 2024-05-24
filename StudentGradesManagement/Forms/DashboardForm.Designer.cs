@@ -37,15 +37,15 @@
             this.columnLastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnDateOfBirth = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnSubjects = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStripStudents = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuStudent = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.listViewSubjects = new System.Windows.Forms.ListView();
             this.columnSubjectId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnSubjectName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTeacherName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnCredits = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.contextMenuStripStudents = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStripSubjects = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editToolStripMenuStudent = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuSubject = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuSubject = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripStudents.SuspendLayout();
@@ -126,6 +126,29 @@
             this.columnSubjects.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnSubjects.Width = 542;
             // 
+            // contextMenuStripStudents
+            // 
+            this.contextMenuStripStudents.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStripStudents.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuStudent,
+            this.deleteToolStripMenuStudent});
+            this.contextMenuStripStudents.Name = "contextMenuStripStudents";
+            this.contextMenuStripStudents.Size = new System.Drawing.Size(159, 80);
+            // 
+            // editToolStripMenuStudent
+            // 
+            this.editToolStripMenuStudent.Name = "editToolStripMenuStudent";
+            this.editToolStripMenuStudent.Size = new System.Drawing.Size(300, 38);
+            this.editToolStripMenuStudent.Text = "Edit";
+            this.editToolStripMenuStudent.Click += new System.EventHandler(this.editToolStripMenuStudent_Click);
+            // 
+            // deleteToolStripMenuStudent
+            // 
+            this.deleteToolStripMenuStudent.Name = "deleteToolStripMenuStudent";
+            this.deleteToolStripMenuStudent.Size = new System.Drawing.Size(300, 38);
+            this.deleteToolStripMenuStudent.Text = "Delete";
+            this.deleteToolStripMenuStudent.Click += new System.EventHandler(this.deleteToolStripMenuStudent_Click);
+            // 
             // listViewSubjects
             // 
             this.listViewSubjects.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -165,15 +188,6 @@
             this.columnCredits.Text = "Credits";
             this.columnCredits.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // contextMenuStripStudents
-            // 
-            this.contextMenuStripStudents.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.contextMenuStripStudents.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuStudent,
-            this.deleteToolStripMenuStudent});
-            this.contextMenuStripStudents.Name = "contextMenuStripStudents";
-            this.contextMenuStripStudents.Size = new System.Drawing.Size(301, 124);
-            // 
             // contextMenuStripSubjects
             // 
             this.contextMenuStripSubjects.ImageScalingSize = new System.Drawing.Size(32, 32);
@@ -181,20 +195,7 @@
             this.editToolStripMenuSubject,
             this.deleteToolStripMenuSubject});
             this.contextMenuStripSubjects.Name = "contextMenuStripSubjects";
-            this.contextMenuStripSubjects.Size = new System.Drawing.Size(159, 80);
-            // 
-            // editToolStripMenuStudent
-            // 
-            this.editToolStripMenuStudent.Name = "editToolStripMenuStudent";
-            this.editToolStripMenuStudent.Size = new System.Drawing.Size(300, 38);
-            this.editToolStripMenuStudent.Text = "Edit";
-            this.editToolStripMenuStudent.Click += new System.EventHandler(this.editToolStripMenuStudent_Click);
-            // 
-            // deleteToolStripMenuStudent
-            // 
-            this.deleteToolStripMenuStudent.Name = "deleteToolStripMenuStudent";
-            this.deleteToolStripMenuStudent.Size = new System.Drawing.Size(300, 38);
-            this.deleteToolStripMenuStudent.Text = "Delete";
+            this.contextMenuStripSubjects.Size = new System.Drawing.Size(301, 124);
             // 
             // editToolStripMenuSubject
             // 
@@ -206,8 +207,9 @@
             // deleteToolStripMenuSubject
             // 
             this.deleteToolStripMenuSubject.Name = "deleteToolStripMenuSubject";
-            this.deleteToolStripMenuSubject.Size = new System.Drawing.Size(158, 38);
+            this.deleteToolStripMenuSubject.Size = new System.Drawing.Size(300, 38);
             this.deleteToolStripMenuSubject.Text = "Delete";
+            this.deleteToolStripMenuSubject.Click += new System.EventHandler(this.deleteToolStripMenuSubject_Click);
             // 
             // DashboardForm
             // 
