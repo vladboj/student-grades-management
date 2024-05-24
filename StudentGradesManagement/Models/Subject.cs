@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 
 namespace StudentGradesManagement.Models
 {
-    internal class Subject
+    public class Subject
     {
-        private int id;
-        private string name;
-        private string teacher;
-        private int credits;
-
-        public int Id { get { return id; } set { id = value; } }
-        public string Name { get { return name; } set { name = value; } }
-        public string Teacher { get { return teacher; } set { teacher = value; } }
-        public int Credits { get { return credits; } set { credits = value; } }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Teacher { get; set; }
+        public int Credits { get; set; }
     }
 }
