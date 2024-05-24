@@ -28,5 +28,13 @@ namespace StudentGradesManagement.Forms
             Subject.Teacher = textBoxTeacher.Text;
             Subject.Credits = (int)numericUpDownCredits.Value;
         }
+
+        private void SubjectsForm_Load(object sender, EventArgs e)
+        {
+            numericUpDownId.Value = Subject.Id;
+            textBoxName.Text = Subject.Name;
+            textBoxTeacher.Text = Subject.Teacher;
+            numericUpDownCredits.Value = Subject.Credits;
+        }
     }
 }

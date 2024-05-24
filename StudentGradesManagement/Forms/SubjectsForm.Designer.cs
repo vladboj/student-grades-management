@@ -140,7 +140,9 @@
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.label1);
             this.Name = "SubjectsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SubjectsForm";
+            this.Load += new System.EventHandler(this.SubjectsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCredits)).EndInit();
             this.ResumeLayout(false);

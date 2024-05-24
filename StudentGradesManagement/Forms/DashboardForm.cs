@@ -93,5 +93,31 @@ namespace StudentGradesManagement.Forms
                 displaySubjects();
             }
         }
+
+        private void editToolStripMenuStudent_Click(object sender, EventArgs e)
+        {
+            if (listViewStudents.SelectedItems.Count == 1)
+            {
+                StudentsForm studentsForm = new StudentsForm(Dashboard);
+                studentsForm.Student = listViewStudents.SelectedItems[0].Tag as Student;
+                if (studentsForm.ShowDialog() == DialogResult.OK)
+                {
+                    displayStudents();
+                }
+            }
+        }
+
+        private void editToolStripMenuSubject_Click(object sender, EventArgs e)
+        {
+            if (listViewSubjects.SelectedItems.Count == 1)
+            {
+                SubjectsForm subjectsForm = new SubjectsForm();
+                subjectsForm.Subject = listViewSubjects.SelectedItems[0].Tag as Subject;
+                if (subjectsForm.ShowDialog() == DialogResult.OK)
+                {
+                    displaySubjects();
+                }
+            }
+        }
     }
 }

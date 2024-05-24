@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.buttonAddStudent = new System.Windows.Forms.Button();
             this.buttonAddSubject = new System.Windows.Forms.Button();
             this.listViewStudents = new System.Windows.Forms.ListView();
@@ -41,6 +42,14 @@
             this.columnSubjectName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnTeacherName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnCredits = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStripStudents = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStripSubjects = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuStudent = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuStudent = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuSubject = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuSubject = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStripStudents.SuspendLayout();
+            this.contextMenuStripSubjects.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonAddStudent
@@ -76,6 +85,9 @@
             this.columnLastName,
             this.columnDateOfBirth,
             this.columnSubjects});
+            this.listViewStudents.ContextMenuStrip = this.contextMenuStripStudents;
+            this.listViewStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewStudents.FullRowSelect = true;
             this.listViewStudents.GridLines = true;
             this.listViewStudents.HideSelection = false;
             this.listViewStudents.Location = new System.Drawing.Point(22, 29);
@@ -122,6 +134,9 @@
             this.columnSubjectName,
             this.columnTeacherName,
             this.columnCredits});
+            this.listViewSubjects.ContextMenuStrip = this.contextMenuStripSubjects;
+            this.listViewSubjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewSubjects.FullRowSelect = true;
             this.listViewSubjects.GridLines = true;
             this.listViewSubjects.HideSelection = false;
             this.listViewSubjects.Location = new System.Drawing.Point(1037, 29);
@@ -150,6 +165,50 @@
             this.columnCredits.Text = "Credits";
             this.columnCredits.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // contextMenuStripStudents
+            // 
+            this.contextMenuStripStudents.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStripStudents.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuStudent,
+            this.deleteToolStripMenuStudent});
+            this.contextMenuStripStudents.Name = "contextMenuStripStudents";
+            this.contextMenuStripStudents.Size = new System.Drawing.Size(301, 124);
+            // 
+            // contextMenuStripSubjects
+            // 
+            this.contextMenuStripSubjects.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStripSubjects.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuSubject,
+            this.deleteToolStripMenuSubject});
+            this.contextMenuStripSubjects.Name = "contextMenuStripSubjects";
+            this.contextMenuStripSubjects.Size = new System.Drawing.Size(159, 80);
+            // 
+            // editToolStripMenuStudent
+            // 
+            this.editToolStripMenuStudent.Name = "editToolStripMenuStudent";
+            this.editToolStripMenuStudent.Size = new System.Drawing.Size(300, 38);
+            this.editToolStripMenuStudent.Text = "Edit";
+            this.editToolStripMenuStudent.Click += new System.EventHandler(this.editToolStripMenuStudent_Click);
+            // 
+            // deleteToolStripMenuStudent
+            // 
+            this.deleteToolStripMenuStudent.Name = "deleteToolStripMenuStudent";
+            this.deleteToolStripMenuStudent.Size = new System.Drawing.Size(300, 38);
+            this.deleteToolStripMenuStudent.Text = "Delete";
+            // 
+            // editToolStripMenuSubject
+            // 
+            this.editToolStripMenuSubject.Name = "editToolStripMenuSubject";
+            this.editToolStripMenuSubject.Size = new System.Drawing.Size(158, 38);
+            this.editToolStripMenuSubject.Text = "Edit";
+            this.editToolStripMenuSubject.Click += new System.EventHandler(this.editToolStripMenuSubject_Click);
+            // 
+            // deleteToolStripMenuSubject
+            // 
+            this.deleteToolStripMenuSubject.Name = "deleteToolStripMenuSubject";
+            this.deleteToolStripMenuSubject.Size = new System.Drawing.Size(158, 38);
+            this.deleteToolStripMenuSubject.Text = "Delete";
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -164,6 +223,8 @@
             this.Name = "DashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DashboardForm";
+            this.contextMenuStripStudents.ResumeLayout(false);
+            this.contextMenuStripSubjects.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -183,5 +244,11 @@
         private System.Windows.Forms.ColumnHeader columnSubjectName;
         private System.Windows.Forms.ColumnHeader columnTeacherName;
         private System.Windows.Forms.ColumnHeader columnCredits;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripStudents;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripSubjects;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuStudent;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuStudent;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuSubject;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuSubject;
     }
 }

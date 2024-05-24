@@ -173,6 +173,7 @@ namespace StudentGradesManagement.Forms
             this.Name = "StudentsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "StudentsForm";
+            this.Load += new System.EventHandler(this.StudentsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
