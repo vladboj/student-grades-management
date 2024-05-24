@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentGradesManagement.Models
 {
+    [Serializable]
     public class Student
     {
         public int Id { get; set; }

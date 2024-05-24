@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -151,6 +153,33 @@ namespace StudentGradesManagement.Forms
                     }
                 }
                 displaySubjects();
+            }
+        }
+
+        private void saveToFileToolStripMenuSave_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream fileStream = File.Create(saveFileDialog.FileName))
+                {
+                    BinaryFormatter binaryFormatter = new BinaryFormatter();
+                    binaryFormatter.Serialize(fileStream, Dashboard.Students);
+                }
+            }
+        }
+
+        private void loadFromFileToolStripMenuLoad_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using(FileStream fileStream = File.OpenRead(openFileDialog.FileName))
+                {
+                    BinaryFormatter binaryFormatter = new BinaryFormatter();
+                    Dashboard.Students = (List<Student>)binaryFormatter.Deserialize(fileStream);
+                    displayStudents();
+                }
             }
         }
     }

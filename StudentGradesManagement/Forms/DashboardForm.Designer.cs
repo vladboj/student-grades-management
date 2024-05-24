@@ -48,6 +48,10 @@
             this.contextMenuStripSubjects = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuSubject = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuSubject = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelTitleStudents = new System.Windows.Forms.Label();
+            this.labelTitleSubjects = new System.Windows.Forms.Label();
+            this.saveToFileToolStripMenuSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadFromFileToolStripMenuLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripStudents.SuspendLayout();
             this.contextMenuStripSubjects.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +60,7 @@
             // 
             this.buttonAddStudent.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonAddStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddStudent.Location = new System.Drawing.Point(367, 699);
+            this.buttonAddStudent.Location = new System.Drawing.Point(377, 734);
             this.buttonAddStudent.Name = "buttonAddStudent";
             this.buttonAddStudent.Size = new System.Drawing.Size(281, 114);
             this.buttonAddStudent.TabIndex = 0;
@@ -68,7 +72,7 @@
             // 
             this.buttonAddSubject.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonAddSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddSubject.Location = new System.Drawing.Point(1141, 699);
+            this.buttonAddSubject.Location = new System.Drawing.Point(1151, 734);
             this.buttonAddSubject.Name = "buttonAddSubject";
             this.buttonAddSubject.Size = new System.Drawing.Size(270, 114);
             this.buttonAddSubject.TabIndex = 1;
@@ -90,7 +94,7 @@
             this.listViewStudents.FullRowSelect = true;
             this.listViewStudents.GridLines = true;
             this.listViewStudents.HideSelection = false;
-            this.listViewStudents.Location = new System.Drawing.Point(22, 29);
+            this.listViewStudents.Location = new System.Drawing.Point(41, 110);
             this.listViewStudents.Name = "listViewStudents";
             this.listViewStudents.Size = new System.Drawing.Size(958, 562);
             this.listViewStudents.TabIndex = 2;
@@ -131,9 +135,11 @@
             this.contextMenuStripStudents.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.contextMenuStripStudents.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editToolStripMenuStudent,
-            this.deleteToolStripMenuStudent});
+            this.deleteToolStripMenuStudent,
+            this.saveToFileToolStripMenuSave,
+            this.loadFromFileToolStripMenuLoad});
             this.contextMenuStripStudents.Name = "contextMenuStripStudents";
-            this.contextMenuStripStudents.Size = new System.Drawing.Size(159, 80);
+            this.contextMenuStripStudents.Size = new System.Drawing.Size(301, 200);
             // 
             // editToolStripMenuStudent
             // 
@@ -162,7 +168,7 @@
             this.listViewSubjects.FullRowSelect = true;
             this.listViewSubjects.GridLines = true;
             this.listViewSubjects.HideSelection = false;
-            this.listViewSubjects.Location = new System.Drawing.Point(1037, 29);
+            this.listViewSubjects.Location = new System.Drawing.Point(1048, 110);
             this.listViewSubjects.Name = "listViewSubjects";
             this.listViewSubjects.Size = new System.Drawing.Size(527, 562);
             this.listViewSubjects.TabIndex = 3;
@@ -195,7 +201,7 @@
             this.editToolStripMenuSubject,
             this.deleteToolStripMenuSubject});
             this.contextMenuStripSubjects.Name = "contextMenuStripSubjects";
-            this.contextMenuStripSubjects.Size = new System.Drawing.Size(301, 124);
+            this.contextMenuStripSubjects.Size = new System.Drawing.Size(159, 80);
             // 
             // editToolStripMenuSubject
             // 
@@ -207,9 +213,45 @@
             // deleteToolStripMenuSubject
             // 
             this.deleteToolStripMenuSubject.Name = "deleteToolStripMenuSubject";
-            this.deleteToolStripMenuSubject.Size = new System.Drawing.Size(300, 38);
+            this.deleteToolStripMenuSubject.Size = new System.Drawing.Size(158, 38);
             this.deleteToolStripMenuSubject.Text = "Delete";
             this.deleteToolStripMenuSubject.Click += new System.EventHandler(this.deleteToolStripMenuSubject_Click);
+            // 
+            // labelTitleStudents
+            // 
+            this.labelTitleStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelTitleStudents.AutoSize = true;
+            this.labelTitleStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleStudents.Location = new System.Drawing.Point(406, 37);
+            this.labelTitleStudents.Name = "labelTitleStudents";
+            this.labelTitleStudents.Size = new System.Drawing.Size(174, 42);
+            this.labelTitleStudents.TabIndex = 4;
+            this.labelTitleStudents.Text = "Students";
+            // 
+            // labelTitleSubjects
+            // 
+            this.labelTitleSubjects.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.labelTitleSubjects.AutoSize = true;
+            this.labelTitleSubjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleSubjects.Location = new System.Drawing.Point(1229, 37);
+            this.labelTitleSubjects.Name = "labelTitleSubjects";
+            this.labelTitleSubjects.Size = new System.Drawing.Size(170, 42);
+            this.labelTitleSubjects.TabIndex = 5;
+            this.labelTitleSubjects.Text = "Subjects";
+            // 
+            // saveToFileToolStripMenuSave
+            // 
+            this.saveToFileToolStripMenuSave.Name = "saveToFileToolStripMenuSave";
+            this.saveToFileToolStripMenuSave.Size = new System.Drawing.Size(300, 38);
+            this.saveToFileToolStripMenuSave.Text = "Save to file";
+            this.saveToFileToolStripMenuSave.Click += new System.EventHandler(this.saveToFileToolStripMenuSave_Click);
+            // 
+            // loadFromFileToolStripMenuLoad
+            // 
+            this.loadFromFileToolStripMenuLoad.Name = "loadFromFileToolStripMenuLoad";
+            this.loadFromFileToolStripMenuLoad.Size = new System.Drawing.Size(300, 38);
+            this.loadFromFileToolStripMenuLoad.Text = "Load from file";
+            this.loadFromFileToolStripMenuLoad.Click += new System.EventHandler(this.loadFromFileToolStripMenuLoad_Click);
             // 
             // DashboardForm
             // 
@@ -217,6 +259,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1674, 929);
+            this.Controls.Add(this.labelTitleSubjects);
+            this.Controls.Add(this.labelTitleStudents);
             this.Controls.Add(this.listViewSubjects);
             this.Controls.Add(this.listViewStudents);
             this.Controls.Add(this.buttonAddSubject);
@@ -228,6 +272,7 @@
             this.contextMenuStripStudents.ResumeLayout(false);
             this.contextMenuStripSubjects.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -252,5 +297,9 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuStudent;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuSubject;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuSubject;
+        private System.Windows.Forms.Label labelTitleStudents;
+        private System.Windows.Forms.Label labelTitleSubjects;
+        private System.Windows.Forms.ToolStripMenuItem saveToFileToolStripMenuSave;
+        private System.Windows.Forms.ToolStripMenuItem loadFromFileToolStripMenuLoad;
     }
 }

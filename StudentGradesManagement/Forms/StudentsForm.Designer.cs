@@ -33,6 +33,7 @@ namespace StudentGradesManagement.Forms
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelId = new System.Windows.Forms.Label();
             this.labelFirstName = new System.Windows.Forms.Label();
             this.labelLastName = new System.Windows.Forms.Label();
@@ -44,7 +45,9 @@ namespace StudentGradesManagement.Forms
             this.dateTimePickerDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.buttonSubmitStudent = new System.Windows.Forms.Button();
             this.checkedListBoxSubjects = new System.Windows.Forms.CheckedListBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // labelId
@@ -104,6 +107,8 @@ namespace StudentGradesManagement.Forms
             this.numericUpDownId.Name = "numericUpDownId";
             this.numericUpDownId.Size = new System.Drawing.Size(202, 49);
             this.numericUpDownId.TabIndex = 5;
+            this.numericUpDownId.Validating += new System.ComponentModel.CancelEventHandler(this.numericUpDownId_Validating);
+            this.numericUpDownId.Validated += new System.EventHandler(this.numericUpDownId_Validated);
             // 
             // textBoxFirstName
             // 
@@ -139,7 +144,7 @@ namespace StudentGradesManagement.Forms
             this.buttonSubmitStudent.Name = "buttonSubmitStudent";
             this.buttonSubmitStudent.Size = new System.Drawing.Size(228, 97);
             this.buttonSubmitStudent.TabIndex = 9;
-            this.buttonSubmitStudent.Text = "Submit";
+            this.buttonSubmitStudent.Text = "&Submit";
             this.buttonSubmitStudent.UseVisualStyleBackColor = true;
             this.buttonSubmitStudent.Click += new System.EventHandler(this.buttonSubmitStudent_Click);
             // 
@@ -152,6 +157,10 @@ namespace StudentGradesManagement.Forms
             this.checkedListBoxSubjects.Name = "checkedListBoxSubjects";
             this.checkedListBoxSubjects.Size = new System.Drawing.Size(587, 142);
             this.checkedListBoxSubjects.TabIndex = 10;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // StudentsForm
             // 
@@ -175,6 +184,7 @@ namespace StudentGradesManagement.Forms
             this.Text = "StudentsForm";
             this.Load += new System.EventHandler(this.StudentsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +203,6 @@ namespace StudentGradesManagement.Forms
         private System.Windows.Forms.DateTimePicker dateTimePickerDateOfBirth;
         private System.Windows.Forms.Button buttonSubmitStudent;
         private CheckedListBox checkedListBoxSubjects;
+        private ErrorProvider errorProvider;
     }
 }
